@@ -1,6 +1,6 @@
 const RELATION_DATE = "2026-04-26";
 
-const UNLOCK_TIME = new Date("2026-10-05T12:00:00+07:00");
+const UNLOCK_TIME = new Date("2026-10-06T12:00:00+07:00");
 
 
 
