@@ -1,0 +1,773 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cream: #f8f3ea;
+    --paper: #fffdf8;
+    --brown: #493a32;
+    --brown-light: #75645a;
+    --gold: #b18a4a;
+    --gold-light: #d6bb83;
+    --pink: #c88991;
+    --border: rgba(73, 58, 50, 0.14);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--brown);
+    background: var(--cream);
+    min-height: 100vh;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(214, 187, 131, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(200, 137, 145, 0.13),
+            transparent 30%
+        ),
+        var(--cream);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.graduation-icon {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: rgba(255, 253, 248, 0.8);
+
+    font-size: 31px;
+
+    box-shadow:
+        0 10px 35px rgba(73, 58, 50, 0.08);
+}
+
+.small-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 17px;
+}
+
+.login-container h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(43px, 8vw, 66px);
+    line-height: 0.98;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.login-container h1 span {
+    font-style: italic;
+    color: var(--pink);
+}
+
+.login-description {
+    max-width: 410px;
+    margin: 0 auto 30px;
+
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--brown-light);
+}
+
+.login-card {
+    background: rgba(255, 253, 248, 0.9);
+    border: 1px solid var(--border);
+
+    padding: 27px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(73, 58, 50, 0.08);
+}
+
+.login-card label {
+    display: block;
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+.login-card input {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid rgba(73, 58, 50, 0.18);
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--brown);
+
+    background: #fff;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.login-card input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(177, 138, 74, 0.1);
+}
+
+.login-card button {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 12px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.login-card button:hover {
+    transform: translateY(-2px);
+    background: #5b483d;
+
+    box-shadow:
+        0 10px 25px rgba(73, 58, 50, 0.18);
+}
+
+.login-card button span {
+    margin-left: 7px;
+}
+
+.login-message {
+    min-height: 18px;
+    margin-top: 12px;
+
+    font-size: 12px;
+    color: #b55d66;
+}
+
+.login-message.success {
+    color: #66835f;
+}
+
+.locked-info {
+    margin-top: 20px;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    color: var(--brown-light);
+}
+
+.locked-info span {
+    margin-right: 5px;
+}
+
+.locked-info strong {
+    color: var(--brown);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.countdown div {
+    min-width: 63px;
+
+    padding: 10px 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: rgba(255, 253, 248, 0.6);
+}
+
+.countdown strong {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.countdown span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: var(--brown-light);
+}
+
+.login-container footer {
+    margin-top: 30px;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    color: var(--brown-light);
+}
+
+/* Decorations */
+
+.floating-decoration {
+    position: absolute;
+    color: rgba(177, 138, 74, 0.4);
+    pointer-events: none;
+}
+
+.decoration-1 {
+    top: 13%;
+    left: 13%;
+    font-size: 17px;
+}
+
+.decoration-2 {
+    top: 25%;
+    right: 15%;
+    font-size: 22px;
+}
+
+.decoration-3 {
+    bottom: 20%;
+    left: 20%;
+    font-size: 14px;
+}
+
+.decoration-4 {
+    bottom: 15%;
+    right: 17%;
+    font-size: 20px;
+}
+
+/* =========================
+   MAIL PAGE
+========================= */
+
+.mail-page {
+    min-height: 100vh;
+    padding: 60px 20px 90px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(214, 187, 131, 0.14),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(200, 137, 145, 0.10),
+            transparent 25%
+        ),
+        var(--cream);
+}
+
+.letter-wrapper {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.top-decoration {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid var(--border);
+
+    background: var(--paper);
+
+    font-size: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(73, 58, 50, 0.07);
+}
+
+.mail-page .small-label {
+    text-align: center;
+}
+
+.letter-title {
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 8vw, 76px);
+    line-height: 1;
+    font-weight: 500;
+
+    margin-bottom: 40px;
+}
+
+.letter-title em {
+    color: var(--pink);
+}
+
+/* Photo */
+
+.photo-frame {
+    max-width: 500px;
+    margin: 0 auto 45px;
+
+    padding: 10px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(73, 58, 50, 0.12);
+}
+
+.photo-inner {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee4d2,
+            #e8d8ca
+        );
+}
+
+.photo-inner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--brown-light);
+}
+
+.photo-placeholder span {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    color: var(--pink);
+}
+
+.photo-placeholder p {
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.photo-inner:not(.no-photo) .photo-placeholder {
+    display: none;
+}
+
+.photo-caption {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 11px 5px 2px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    font-style: italic;
+
+    color: var(--brown-light);
+}
+
+/* Letter */
+
+.letter-card {
+    position: relative;
+
+    padding: clamp(30px, 6vw, 65px);
+
+    background:
+        linear-gradient(
+            rgba(255, 253, 248, 0.97),
+            rgba(255, 253, 248, 0.97)
+        );
+
+    border: 1px solid rgba(73, 58, 50, 0.12);
+
+    box-shadow:
+        0 25px 80px rgba(73, 58, 50, 0.09);
+}
+
+.letter-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 12px;
+
+    border: 1px solid rgba(177, 138, 74, 0.15);
+
+    pointer-events: none;
+}
+
+.letter-date {
+    text-align: right;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: var(--gold);
+
+    margin-bottom: 35px;
+}
+
+.letter-card p {
+    position: relative;
+
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    line-height: 1.95;
+
+    margin-bottom: 23px;
+
+    color: var(--brown);
+}
+
+.letter-card p:first-of-type {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.letter-card strong {
+    font-weight: 700;
+}
+
+.quote {
+    position: relative;
+
+    margin: 40px 0;
+    padding: 25px 30px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    line-height: 1.5;
+    font-style: italic;
+
+    color: var(--pink);
+}
+
+.quote span {
+    color: var(--gold);
+    font-size: 35px;
+}
+
+.final-message {
+    text-align: center;
+
+    margin-top: 45px !important;
+    margin-bottom: 40px !important;
+
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+}
+
+.final-message strong {
+    color: var(--pink);
+}
+
+.signature {
+    position: relative;
+
+    text-align: right;
+
+    margin-top: 50px;
+
+    font-family: "Playfair Display", serif;
+}
+
+.signature span {
+    display: block;
+
+    font-size: 14px;
+    font-style: italic;
+
+    color: var(--brown-light);
+}
+
+.signature strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    color: var(--pink);
+}
+
+.bottom-message {
+    text-align: center;
+
+    margin-top: 40px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+    font-style: italic;
+
+    color: var(--brown-light);
+}
+
+.bottom-message span {
+    color: var(--gold);
+    margin: 0 10px;
+}
+
+/* Stars */
+
+.background-stars span {
+    position: fixed;
+
+    color: rgba(177, 138, 74, 0.28);
+
+    pointer-events: none;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.background-stars span:nth-child(1) {
+    top: 12%;
+    left: 8%;
+}
+
+.background-stars span:nth-child(2) {
+    top: 25%;
+    right: 10%;
+}
+
+.background-stars span:nth-child(3) {
+    top: 55%;
+    left: 5%;
+}
+
+.background-stars span:nth-child(4) {
+    top: 70%;
+    right: 7%;
+}
+
+.background-stars span:nth-child(5) {
+    bottom: 12%;
+    left: 14%;
+}
+
+.background-stars span:nth-child(6) {
+    bottom: 20%;
+    right: 17%;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 30px 16px;
+    }
+
+    .login-container h1 {
+        font-size: 48px;
+    }
+
+    .login-description {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .login-card {
+        padding: 21px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .countdown div {
+        min-width: 57px;
+        padding: 9px 5px;
+    }
+
+    .countdown strong {
+        font-size: 18px;
+    }
+
+    .mail-page {
+        padding: 35px 12px 60px;
+    }
+
+    .letter-title {
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+
+    .photo-frame {
+        margin-bottom: 30px;
+    }
+
+    .letter-card {
+        padding: 30px 22px;
+    }
+
+    .letter-card::before {
+        inset: 8px;
+    }
+
+    .letter-card p {
+        font-size: 16px;
+        line-height: 1.85;
+        margin-bottom: 21px;
+    }
+
+    .quote {
+        margin: 32px 0;
+        padding: 22px 15px;
+        font-size: 20px;
+    }
+
+    .letter-date {
+        margin-bottom: 27px;
+    }
+
+    .final-message {
+        font-size: 18px !important;
+    }
+
+    .decoration-1 {
+        left: 5%;
+    }
+
+    .decoration-2 {
+        right: 5%;
+    }
+
+    .decoration-3 {
+        left: 7%;
+    }
+
+    .decoration-4 {
+        right: 7%;
+    }
+}
+
+.login-card input.wrong {
+    border-color: #b55d66;
+    animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+}
